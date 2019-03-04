@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "blog/package.json", "use": "@now/next" },
+    { "src": "world/index.html", "use": "@now/html-minifier" },
+    {
+      "src": "rootphp/*.php",
+      "use": "@now/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/blog/$1"
+    }
+  ]
+}
